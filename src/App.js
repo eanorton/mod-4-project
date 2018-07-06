@@ -15,9 +15,19 @@ class App extends Component {
   }
 
   handleChange = (event) => {
-    this.setState({searchTerm: event.target.value}, ()=>{console.log(this.state.searchTerm)})
+    this.setState({searchTerm: event.target.value}, ()=>{this.fetchNewSearchQuery(this.state.searchTerm)})
   }
 
+  fetchNewSearchQuery = (term) => {
+    console.log("this is the new search term", term)
+    if (term) {
+      fetch(`https://images-api.nasa.gov/search?q=${term}`)
+      .then(response=>response.json())
+      .then(objs=>this.setState({imagesSearch: objs.collection}))
+    } else {
+      this.componentDidMount();
+    }
+  }
 
   componentDidMount(){
     fetch('https://images-api.nasa.gov/search?q=galaxies')
