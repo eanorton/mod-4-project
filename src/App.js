@@ -30,7 +30,7 @@ class App extends Component {
   }
 
   componentDidMount(){
-    fetch('https://images-api.nasa.gov/search?q=galaxies')
+    fetch('https://images-api.nasa.gov/search?q=galaxy')
     .then(response=>response.json())
     .then(objs=>this.setState({imagesSearch: objs.collection}))
   }
@@ -41,7 +41,7 @@ class App extends Component {
 
         <header className="App-header">
 
-          <img src={logo} className="App-logo" alt="logo" />
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJZhQ2Lysn-QTeERR7du094-9-GIgnLfBOeZQwFwR-eW0netN2tg" className="App-logo" alt="logo" />
           <h1 className="App-title">GALAXY GALLERY</h1>
 
         </header>
