@@ -13,9 +13,10 @@ class ListContainer extends Component {
     return (
       <div>
 
-        {displaySearchQuery ? <h1>Results for {displaySearchQuery.slice(37)}</h1> : <h1>"Loading..."</h1>}
-
-        {this.props.imagesSearch.items ? this.props.imagesSearch.items.map(obj=><ListItem links={obj.links} data={obj.data}/> ) : <ListItem />}
+        <div className="list-container">
+          {displaySearchQuery ? <h1>Results for {displaySearchQuery.slice(37)}</h1> : <h1>"Loading..."</h1>}
+          {this.props.imagesSearch.items ? this.props.imagesSearch.items.map(obj=><ListItem links={obj.links} data={obj.data}/> ) : <ListItem />}
+        </div>
 
       </div>
     )

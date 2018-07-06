@@ -42,7 +42,7 @@ class App extends Component {
         <header className="App-header">
 
           <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">S p a c e  G a l l e r y</h1>
+          <h1 className="App-title">GALAXY GALLERY</h1>
 
         </header>
 
