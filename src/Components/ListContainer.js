@@ -14,7 +14,7 @@ class ListContainer extends Component {
   const getImageById = (event) => {
     let selectedImageId = event.target.id
     let selectedImageObj = this.props.imagesSearch.items.find(image=>image.data[0].nasa_id == selectedImageId)
-    
+
     this.setState({selectedImage: selectedImageObj})
   }
 
@@ -29,7 +29,7 @@ class ListContainer extends Component {
           {this.props.imagesSearch.items ? this.props.imagesSearch.items.map(obj=><ListItem getImageById={getImageById} links={obj.links} data={obj.data} key={obj.data[0].nasa_id}/> ) : null}
         </div>
 
-        <Details />
+        {this.state.selectedImage ? <Details selectedImage={this.state.selectedImage}/> : null }
 
       </div>
     )
