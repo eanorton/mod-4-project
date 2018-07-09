@@ -20,7 +20,7 @@ body {
 
 .list-group-item:hover {
   background-color: #eee;
-
+  cursor: pointer;
 }
 
 .list-group-item {
@@ -47,4 +47,10 @@ body {
   margin-right: 428px;
   margin-left: 428px;
   background-color: #FAFAFA;
+}
+
+.form {
+  margin-left: 1250px;
+  padding: 2px;
+
 }

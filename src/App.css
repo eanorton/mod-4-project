@@ -17,10 +17,12 @@
 
 .App-title {
   font-size: 2em;
+  letter-spacing: 20px;
+  opacity: 0.8;
 }
 
 .App-intro {
-  font-size: large;
+  font-size: xx-large;
 }
 
 @keyframes App-logo-spin {

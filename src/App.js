@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import ListContainer from './Components/ListContainer';
 import SearchBar from './Components/SearchBar';
+import Form from './Components/Form';
 
 class App extends Component {
   constructor(props) {
@@ -42,7 +43,7 @@ class App extends Component {
         <header className="App-header">
 
           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJZhQ2Lysn-QTeERR7du094-9-GIgnLfBOeZQwFwR-eW0netN2tg" className="App-logo" alt="logo" />
-          <h1 className="App-title">G A L A X Y   G A L L E R Y</h1>
+          <h1 className="App-title">GALAXY GALLERY</h1>
 
         </header>
 
@@ -53,6 +54,7 @@ class App extends Component {
 
         <ListContainer imagesSearch={this.state.imagesSearch}/>
 
+        <Form />
 
       </div>
     );
