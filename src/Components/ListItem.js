@@ -24,6 +24,7 @@ class ListItem extends Component {
 
         {this.props.data ? this.props.data.map(obj=><h4 key={obj.nasa_id} id={obj.nasa_id}>{obj.title}</h4>) : null}
 
+        {this.props.data ? this.props.data.map(obj=><h6 key={obj.nasa_id} id={obj.nasa_id}>{obj.media_type}</h6>) : null}
 
       </div>
     )

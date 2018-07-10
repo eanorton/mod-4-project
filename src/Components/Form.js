@@ -18,7 +18,7 @@ class Form extends Component {
   }
 
   render() {
-  
+
     return (
       <form className="form" onSubmit={this.handleSubmit}>
 
@@ -26,7 +26,7 @@ class Form extends Component {
           <h3>Create New Galaxy</h3>
         </div>
 
-        <label>
+        <label className="label">
           Name:
           <input
             type="text"
@@ -36,7 +36,7 @@ class Form extends Component {
             />
         </label>
         <br></br>
-        <label>
+        <label className="label">
           Description:
           <input
             type="text"
@@ -46,7 +46,7 @@ class Form extends Component {
             />
         </label>
         <br></br>
-        <label>
+        <label className="label">
           Image Url:
           <input
             type="text"
@@ -56,7 +56,7 @@ class Form extends Component {
             />
         </label>
         <br></br>
-        <button type="submit" value="Submit">SUBMIT</button>
+        <button className="button" type="submit" value="Submit">SUBMIT</button>
 
       </form>
     )
