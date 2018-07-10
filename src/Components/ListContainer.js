@@ -1,12 +1,12 @@
-
 import React, { Component } from 'react';
 import ListItem from './ListItem';
 import Details from './Details';
+import Form from './Form';
 
 class ListContainer extends Component {
 
   state = {
-    selectedImage: []
+    selectedImage: null
   }
 
   render() {
@@ -25,9 +25,11 @@ class ListContainer extends Component {
       <div>
 
         <div className="list-container">
-          {displaySearchQuery ? <h1>Results for {displaySearchQuery.slice(37)}</h1> : <h1>Loading...</h1>}
+          {displaySearchQuery ? <h1>Results for "{displaySearchQuery.slice(37)}"</h1> : <h1>Loading...</h1>}
           {this.props.imagesSearch.items ? this.props.imagesSearch.items.map(obj=><ListItem getImageById={getImageById} links={obj.links} data={obj.data} key={obj.data[0].nasa_id}/> ) : null}
         </div>
+
+
 
         {this.state.selectedImage ? <Details selectedImage={this.state.selectedImage}/> : null }
 

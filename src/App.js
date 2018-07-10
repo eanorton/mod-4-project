@@ -54,7 +54,6 @@ class App extends Component {
 
         <ListContainer imagesSearch={this.state.imagesSearch}/>
 
-        <Form />
 
       </div>
     );
