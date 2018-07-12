@@ -39,7 +39,7 @@ class ListContainer extends Component {
 
         <div className="saved-list">
           <h1>Saved Items</h1>
-          {this.state.savedImages ? <SavedListItems savedImages={this.state.savedImages} /> : null}
+          {this.state.savedImages ? <SavedListItems getImageById={getImageById} savedImages={this.state.savedImages} /> : null}
         </div>
 
         {this.state.selectedImage ? <Details handleClick={this.handleClick} selectedImage={this.state.selectedImage}/> : null }
