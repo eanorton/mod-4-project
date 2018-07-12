@@ -2,11 +2,19 @@ import React, { Component } from 'react';
 import ListItem from './ListItem';
 import Details from './Details';
 import Form from './Form';
+import SavedListItems from './SavedListItems';
 
 class ListContainer extends Component {
 
   state = {
-    selectedImage: null
+    selectedImage: null,
+    savedImages: []
+  }
+
+  handleClick = (event, imageObj) => {
+    if (!this.state.savedImages.includes(imageObj)) {
+      this.setState({savedImages: [imageObj, ...this.state.savedImages]})
+    }
   }
 
   render() {
@@ -29,9 +37,14 @@ class ListContainer extends Component {
           {this.props.imagesSearch.items ? this.props.imagesSearch.items.map(obj=><ListItem getImageById={getImageById} links={obj.links} data={obj.data} key={obj.data[0].nasa_id}/> ) : null}
         </div>
 
+        <div className="saved-list">
+          <h1>Saved Items</h1>
+          {this.state.savedImages ? <SavedListItems savedImages={this.state.savedImages} /> : null}
+        </div>
+
+        {this.state.selectedImage ? <Details handleClick={this.handleClick} selectedImage={this.state.selectedImage}/> : null }
 
 
-        {this.state.selectedImage ? <Details selectedImage={this.state.selectedImage}/> : null }
 
       </div>
     )

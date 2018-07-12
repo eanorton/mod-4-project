@@ -9,11 +9,17 @@ class Details extends Component {
   }
 
   componentDidMount() {
-    window.scrollTo(0,0)
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
   }
 
   componentDidUpdate() {
-    window.scrollTo(0,0)
+    window.scrollTo({
+      top: 100,
+      behavior: "smooth"
+    });
     console.log('in the did update', this.props)
   }
 
@@ -33,6 +39,7 @@ class Details extends Component {
     }
   }
 
+
   render() {
     if (this.props.selectedImage.data[0].media_type === "video" && this.state.videoUrl === ""){
       this.fetchVideo(this.props.selectedImage.href)
@@ -44,11 +51,11 @@ class Details extends Component {
 
         <h1>{this.props.selectedImage.data[0].title}</h1>
 
-        {this.props.selectedImage.data[0].media_type === "image" ? <img src={this.props.selectedImage.links[0].href} /> : <iframe src={this.state.videoUrl}></iframe> }
+        {this.props.selectedImage.data[0].media_type === "image" ? <img className="image" src={this.props.selectedImage.links[0].href} /> : <iframe className="iframe" src={this.state.videoUrl}></iframe> }
 
         <p>{this.props.selectedImage.data[0].description}</p>
 
-        <button className="button">SAVE</button>
+        <button onClick={(event)=>this.props.handleClick(event, this.props.selectedImage)} className="button">SAVE TO LIST</button>
 
         <div>
           <button className="button" name="form" onClick={this.renderForm}>CREATE A NEW GALAXY</button>
